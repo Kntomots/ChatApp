@@ -1,0 +1,92 @@
+<ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ΔΙΕΠΑΦΕΣ ΦΟΡΗΤΩΝ ΣΥΣΚΕΥΩΝ
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-card-title>Μάθημα 1</ion-card-title>
+            <ion-card-subtitle>Εισαγωγή</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <iframe width="100%" height="500" src="http://delos.it.auth.gr/opendelos/player?rid=3f8adf2" allowfullscreen></iframe>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-card-title>Μάθημα 2</ion-card-title>
+            <ion-card-subtitle>Εισαγωγή</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <iframe width="100%" height="500" src="http://delos.it.auth.gr/opendelos/player?rid=3f8adf2" allowfullscreen></iframe>
+          </ion-card-content>
+        </ion-card>
+              
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="custom-card">
+          <ion-button>Default</ion-button> <ion-button shape="round">Round</ion-button>
+            <ion-item *ngFor="let message of messages">
+              <ion-avatar slot="start">
+                <img src="{{ message.avatar }}" alt="User Avatar">
+              </ion-avatar>
+              <ion-label>
+                <h2>{{ message.sender }}</h2>
+                <p>{{ message.text }}</p>
+                <p class="ion-text-end">{{ message.time }}</p>
+                <div *ngIf="message.file">
+                  <ion-icon name="attach"></ion-icon>
+                  <span>{{ message.file.name }}</span>
+                </div>
+              </ion-label>
+            </ion-item>
+        
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-icon name="attach"></ion-icon>
+                <input type="file" (change)="onFileSelected($event)">
+              </ion-buttons>
+              <ion-input [(ngModel)]="newMessage" placeholder="Type your message..."></ion-input>
+              <ion-button slot="end" (click)="sendMessage()">Send</ion-button>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+
+
+
+
+
+</ion-content>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-app>
+ 
+    
+
+
